@@ -1,0 +1,62 @@
+name: IDUpdate Action
+
+on:
+  schedule:
+    - cron: '* 15 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Create Temp Directory
+      run: | 
+        mkdir D:\temp
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+          python-version: '3.11'
+    - uses: nanasess/setup-chromedriver@v2
+      with:
+    # Optional: do not specify to match Chrome's version
+        chromedriver-version: '116.0.5845.96'
+    - run: chromedriver --url-base=/wd/hub &
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@v1.2.0
+
+    - name: Install selenium
+      run: pip install selenium
+
+    - name: Install openpyxl
+      run: pip install openpyxl
+
+    - name: Run download.py
+      run: python download.py
+
+    - name: Run xlsx.py
+      run: python xlsx.py
+
+    - name: Run formal.py
+      run: python formal.py
+
+    - name: Run IDUpdate for marble
+      run: ./ryo.exe --device marble --file ./IDList/marble.txt
+
+    - name: Run IDUpdate for munch
+      run: ./ryo.exe --device munch --file ./IDList/munch.txt
+  
+    - name: Run IDUpdate for ventar
+      run: ./ryo.exe --device ventar --file ./IDList/ventar.txt
+        
+    - name: Run time_1.py
+      run: python time_1.py
+
+    - name: Copy Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+          name: IDList
+          path: ./IDList/*.txt
