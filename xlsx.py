@@ -3,7 +3,7 @@ import os
 
 # 查找文件
 directory_path = 'D:/temp'
-txt_files = [filename for filename in os.listdir(directory_path) if filename.endswith('.xlsx') and ('12T' in filename or 'K40s' in filename or 'MI 11' in filename)]
+txt_files = [filename for filename in os.listdir(directory_path) if filename.endswith('.xlsx') and ('12T' in filename or 'K40s' in filename or 'MI 11' in filename or 'Y70' in filename or '855' in filename)]
 
 # 遍历符合条件的xlsx文件
 for file_name in txt_files:
@@ -35,6 +35,10 @@ for file_name in txt_files:
         output_file_name = 'munch.txt'
     elif 'MI 11' in file_name:
         output_file_name = 'ventar.txt'
+    elif '855' in file_name:
+        output_file_name = 'sm8150.txt' 
+    elif 'Y70' in file_name:
+        output_file_name = 'halo.txt'
     else:
         # 如果文件名不包含关键词，默认使用generic.txt
         output_file_name = 'generic.txt'

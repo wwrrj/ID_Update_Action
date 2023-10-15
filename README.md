@@ -6,3 +6,7 @@
 2.munch
 
 3.ventar
+
+4.sm8150
+
+5.halo

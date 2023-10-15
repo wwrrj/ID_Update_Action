@@ -51,7 +51,14 @@ jobs:
   
     - name: Run IDUpdate for ventar
       run: ./ryo.exe --device ventar --file ./IDList/ventar.txt
-        
+
+    - name: Run IDUpdate for sm8150
+      run: ./ryo.exe --device ventar --file ./IDList/sm8150.txt
+
+    - name: Run IDUpdate for halo
+      run: ./ryo.exe --device ventar --file ./IDList/halo.txt
+
+    
     - name: Run time_1.py
       run: python time_1.py
 
