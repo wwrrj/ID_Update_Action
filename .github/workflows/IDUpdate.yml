@@ -23,7 +23,7 @@ jobs:
     - uses: nanasess/setup-chromedriver@v2
       with:
     # Optional: do not specify to match Chrome's version
-        chromedriver-version: '116.0.5845.96'
+        chromedriver-version: '118.0.5993.70'
     - run: chromedriver --url-base=/wd/hub &
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1.2.0
