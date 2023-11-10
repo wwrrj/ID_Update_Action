@@ -57,6 +57,9 @@ jobs:
 
     - name: Run IDUpdate for halo
       run: ./ryo.exe --device ventar --file ./IDList/halo.txt
+      
+    - name: Run IDUpdate for psyche
+      run: ./ryo.exe --device ventar --file ./IDList/psyche.txt
 
     
     - name: Run time_1.py
