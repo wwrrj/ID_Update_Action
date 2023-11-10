@@ -16,7 +16,7 @@ wd.command_executor._commands["send_command"] = ("POST", '/session/$sessionId/ch
 params = {'cmd': 'Page.setDownloadBehavior', 
           'params':{'behavior':'allow', 'downloadPath':r"D:\temp"}}
 wd.execute("send_command", params=params)
-ids = ["232819975", "227381705", "234538655", "237447812", "237297108"]
+ids = ["232819975", "227381705", "234538655", "237447812", "237297108","233612880"]
 
 def loginwjx():
     # 调用WebDriver 对象的get方法 可以让浏览器打开指定网址
