@@ -53,13 +53,13 @@ jobs:
       run: ./ryo.exe --device ventar --file ./IDList/ventar.txt
 
     - name: Run IDUpdate for sm8150
-      run: ./ryo.exe --device ventar --file ./IDList/sm8150.txt
+      run: ./ryo.exe --device sm8150 --file ./IDList/sm8150.txt
 
     - name: Run IDUpdate for halo
-      run: ./ryo.exe --device ventar --file ./IDList/halo.txt
+      run: ./ryo.exe --device halo --file ./IDList/halo.txt
       
     - name: Run IDUpdate for psyche
-      run: ./ryo.exe --device ventar --file ./IDList/psyche.txt
+      run: ./ryo.exe --device psyche --file ./IDList/psyche.txt
 
     
     - name: Run time_1.py
